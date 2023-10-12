@@ -1,0 +1,89 @@
+$words_Length: 12;
+$tablet-break-point: 768px;
+@import url('https://fonts.googleapis.com/css2?family=Autour+One&family=Dancing+Script:wght@500&family=Fjalla+One&family=Lobster&family=Oxygen:wght@700&family=Roboto+Slab:wght@500&family=Sedgwick+Ave+Display&display=swap');
+
+.Intro{
+    position: relative;
+    height: 700px!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    &--wave{
+        height: 100%;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        object-fit: cover;
+    }
+
+    &--myname{
+        font-family: 'Roboto Slab', serif;
+        color: white;
+        font-size: 3.5rem;
+        font-family: 'Roboto Slab', serif;
+    }
+    &--jobTitle{
+        font-family: 'Oxygen', sans-serif;
+        color: #A69999;
+        -webkit-text-fill-color: transparent;
+        font-size: 5rem;
+        font-weight: bold;
+        -webkit-text-stroke-width: 3px;
+    }
+}
+
+@for $i from 0 through $words_Length {
+    .letter-#{$i}__animate{
+        opacity: 0;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        animation-duration: #{$words_Length - $words_Length / 2}s;
+        @if #{$i} == 0 {
+            animation-delay: 0s;
+
+        }@else{
+            animation-delay: #{$i * 500}ms;
+        }
+
+        transition-timing-function: ease-in-out;
+        animation-name: show_hide ;
+}
+}
+
+@keyframes show_hide{
+    from{
+        opacity: 0;
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+}
+    to{
+        opacity: 1;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+}
+}
+
+@media screen and (max-width: $tablet-break-point) {
+    .Intro{
+        height: 500px!important;
+        &--myname{
+            font-size: 1.5rem;
+        }
+        &--jobTitle{
+
+            font-size: 3rem;
+        }
+    }
+}

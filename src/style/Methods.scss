@@ -1,0 +1,44 @@
+$order-color: #555B6E;
+$text-color: #fff;
+$tablet-break-point: 768px;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Fjalla+One&family=Lobster&family=Oxygen:wght@700&family=Roboto+Slab:wght@500&family=Sedgwick+Ave+Display&display=swap');
+
+.methods{
+    
+    
+    &--number{
+        color: $text-color;
+        font-size: 2.5rem;
+        background-color: $order-color;
+        border-radius: 100%;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        -o-border-radius: 100%;
+        width: 100px;
+        height: 100px;
+}
+    &--name{
+        color: $text-color;
+        font-size: 1.5rem;
+        font-family: 'Lobster', sans-serif;
+    }
+
+    &__line{
+        height: 5px;
+        width: 150px;
+        background-color: $order-color;
+    }
+}
+
+@media screen and (max-width: $tablet-break-point) {
+    .methods{
+        &--container{
+            align-items: center!important;
+        }
+
+        &__line{
+                display: none;
+        }
+            }
+}
