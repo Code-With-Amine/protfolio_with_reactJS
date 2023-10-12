@@ -48,3 +48,10 @@ body{
                 }
 
 }
+/* style header */
+.header__underline{
+    height: 250px;
+    width: 50%!important;
+    padding: 0;
+    margin-top: -150px;
+}

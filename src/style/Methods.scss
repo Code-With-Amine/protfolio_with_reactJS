@@ -4,8 +4,11 @@ $tablet-break-point: 768px;
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Fjalla+One&family=Lobster&family=Oxygen:wght@700&family=Roboto+Slab:wght@500&family=Sedgwick+Ave+Display&display=swap');
 
 .methods{
-    
-    
+
+    &--container{
+        opacity: 0;
+    }
+
     &--number{
         color: $text-color;
         font-size: 2.5rem;
@@ -29,7 +32,32 @@ $tablet-break-point: 768px;
         width: 150px;
         background-color: $order-color;
     }
+    .animate{
+        animation-duration: 5s;
+        animation-name: left_right;
+        animation-fill-mode: forwards;
+    }
 }
+
+@keyframes left_right {
+    from{
+        opacity: 0;
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+}
+    to{
+        opacity: 1;
+        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+}
+}
+
 
 @media screen and (max-width: $tablet-break-point) {
     .methods{

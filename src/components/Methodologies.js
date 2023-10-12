@@ -1,12 +1,53 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import Header from "./Header";
 import { Methodes } from "../assets/data/methodology";
 import "../style/Methods.scss";
 
 function Methodologies() {
+  const MethodsContainer = useRef(null);
+
+function addDelay(steps) {
+  steps.forEach((step, index) => {
+    // You need to set the animationDelay property as a string with units (e.g., '1s' for 1 second)
+    step.style.animationDelay = `${index * 0.5}s`; // Adjust the delay as needed
+  });
+}
+
+
+  function AnimateMethods(){
+      const Containers = Array.from(MethodsContainer.current.children);
+      addDelay(Containers)
+  // Check if the reference to MethodsContainer exists and if it has children
+      if (MethodsContainer.current && Containers.length > 0) {
+            const Observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate"); // Add the "animate" class
+            } else {
+              entry.target.classList.remove("animate"); // Remove the "animate" class when not intersecting
+            }
+          });
+        }
+    );
+
+    Containers.forEach((step) => {
+      Observer.observe(step);
+    });
+  }
+}
+  
+
+  useEffect(()=>{
+    if(MethodsContainer.current !== undefined ){
+      AnimateMethods()
+    }
+  },[MethodsContainer])
+
   return (
     <div className="p-5">
-      <h1 className="text-center p-5 Title">My Methodologies</h1>
-      <div className="methods row justify-content-center gap-5">
+      <Header title="My Methodologies" />
+      <div ref={MethodsContainer} className="methods row justify-content-center gap-5">
         {Methodes.map((method, index) => (
           <div
             className="methods--container col-sm-4 col-lg-3 d-flex flex-column align-items-start p-4"
