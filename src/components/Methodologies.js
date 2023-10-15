@@ -5,6 +5,7 @@ import "../style/Methods.scss";
 
 function Methodologies() {
   const MethodsContainer = useRef(null);
+  const Lines = [];
 
 function addDelay(steps) {
   steps.forEach((step, index) => {
@@ -14,24 +15,24 @@ function addDelay(steps) {
 }
 
 
-  function AnimateMethods(){
-      const Containers = Array.from(MethodsContainer.current.children);
-      addDelay(Containers)
+  function AnimateMethods(animatedItem, addedClass){
+      addDelay(animatedItem)
   // Check if the reference to MethodsContainer exists and if it has children
-      if (MethodsContainer.current && Containers.length > 0) {
+      if (MethodsContainer.current && animatedItem.length > 0) {
             const Observer = new IntersectionObserver(
             (entries) => {
               entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add("animate"); // Add the "animate" class
+              entry.target.classList.add(addedClass); // Add the addedClass class
+              Observer.unobserve(entry.target);
             } else {
-              entry.target.classList.remove("animate"); // Remove the "animate" class when not intersecting
+              entry.target.classList.remove(addedClass); // Remove the addedClass class when not intersecting
             }
           });
         }
     );
 
-    Containers.forEach((step) => {
+    animatedItem.forEach((step) => {
       Observer.observe(step);
     });
   }
@@ -40,12 +41,15 @@ function addDelay(steps) {
 
   useEffect(()=>{
     if(MethodsContainer.current !== undefined ){
-      AnimateMethods()
+      const methods = Array.from(MethodsContainer.current.children)
+      const LinesRef = Array.from(Lines)
+      AnimateMethods(methods, "animate")
+      AnimateMethods(LinesRef, "line__smooth")
     }
   },[MethodsContainer])
 
   return (
-    <div className="p-5">
+    <div className="p-5" id="Methodology" >
       <Header title="My Methodologies" />
       <div ref={MethodsContainer} className="methods row justify-content-center gap-5">
         {Methodes.map((method, index) => (
@@ -58,8 +62,9 @@ function addDelay(steps) {
                 <span>{method.order}</span>
               </div>
 
-              {Methodes.length - 1 !== index && (
-                <div className="methods__line"></div>
+              {
+                (Methodes.length - 1 !== index) && (
+                <div ref={(ref) => (Lines[index] = ref)}className="methods__line"></div>
               )}
             </div>
             <div className="methods--name p-2">{method.name}</div>

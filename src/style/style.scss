@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Sedgwick+Ave+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Fjalla+One&family=Oxygen:wght@700&family=Roboto+Slab:wght@500&family=Sedgwick+Ave+Display&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #2F2A2D;
+    overflow-x: hidden;
+    color: white;
+}
+
+.Title{
+          font-family: 'Dancing Script', cursive;
+    }
+
+
+/* styling navbar */
+#NAVBAR{
+    background-color: #002233;
+    justify-content: center;
+}
+#NAVBAR img{
+    width: 150px;
+    height: 150px;
+}
+
+#NAVBAR a{
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+
+}
+#NAVBAR a:hover{
+    opacity: 0.6;
+    font-size: 1.4rem;
+}
+.navbar-toggler{
+    background-color: #ffffffdf;
+}
+@media screen and (max-width: 1353px) {
+ 
+                #NAVBAR a{
+                        font-size: 1rem;
+                        padding: 0px 30px!important;
+                }
+
+}
+/* style header */
+.header__underline{
+    height: 250px;
+    width: 50%!important;
+    padding: 0;
+    margin-top: -150px;
+}

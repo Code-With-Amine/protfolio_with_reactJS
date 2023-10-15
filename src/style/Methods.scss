@@ -33,12 +33,24 @@ $tablet-break-point: 768px;
         background-color: $order-color;
     }
     .animate{
-        animation-duration: 5s;
+        animation-duration: 3s;
         animation-name: left_right;
         animation-fill-mode: forwards;
     }
+    .line__smooth{
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-name: setWidth;
+    }
 }
-
+@keyframes setWidth {
+    from{
+        width: 0px;
+    }
+    to{
+        width: 150px;
+    }
+}
 @keyframes left_right {
     from{
         opacity: 0;

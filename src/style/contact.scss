@@ -1,0 +1,111 @@
+$text-color: #fff;
+$primary-color: #555B6E;
+$secondary-color: #140202;
+
+@mixin styleSocilas(){
+    position: static;
+    font-size: 5rem;
+}
+
+.contact{
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.3rem;
+    
+    &--title{
+        font-weight: bold;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    &--emailLink{
+        background-color: $primary-color;
+        color: $text-color;
+        
+        &:hover{
+            background-color: $primary-color;
+            opacity: 0.9;
+        }
+    }
+}
+
+.contactMedia{
+    position: relative;
+    height: 300px;
+    width: 300px;
+
+    &--centeredImag{
+   position: absolute;
+   right: 50%;
+   top: 50%;
+   animation: rotate 3.3s linear infinite;
+   -webkit-animation: rotate 3.3s linear infinite;
+}
+
+   &--linkdine{
+    position: absolute;
+    top: 0;
+    right: 50%;
+    font-size: 4rem;
+   }
+
+   &--hashnode{
+    position: absolute;
+    bottom: -100px;
+    right: 50%;
+    font-size: 4rem;
+   }
+   &--email{
+    position: absolute;
+    left: -100px;
+    top: 50%;
+    font-size: 4rem;
+
+}
+
+  &--github{
+     position: absolute;
+     right: 0%;
+     top: 50%;
+     font-size: 4rem;
+   }
+}
+
+@keyframes rotate {
+    to{
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+}
+}
+
+@media screen and (max-width: 1024px) {
+    .contactMedia{
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+   &--centeredImag{
+   display: none;
+ }
+ 
+    &--linkdine{
+        @include styleSocilas()
+    }
+    &--hashnode{
+        @include styleSocilas()
+
+    }
+    &--email{
+        @include styleSocilas()
+
+    }
+    &--github{
+        @include styleSocilas()
+
+    }
+    }
+}

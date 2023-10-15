@@ -1,0 +1,38 @@
+$text-color: #fff;
+$primary-color: #555B6E;
+$secondary-color: #140202;
+$final-color: #D9D9D9;
+
+.project{
+    background-color: $primary-color;
+    color: $text-color;
+    
+    &--title{
+        font-family: 'Roboto Slab', serif;
+
+    }
+
+    &--overviwe{
+        font-family: 'Oxygen', sans-serif;
+    }
+
+    &--technology{
+        background-color: $secondary-color;
+    }
+    &--codeSource{
+        background-color: $final-color;
+        color: black;
+        font-weight: bold;
+        border-radius: 40px;
+        -webkit-border-radius: 40px;
+        -moz-border-radius: 40px;
+        -ms-border-radius: 40px;
+        -o-border-radius: 40px;
+}
+    &--site{
+
+    }
+    &--image{
+        object-fit: cover;
+    }
+}

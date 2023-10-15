@@ -15,11 +15,11 @@ function NavBar() {
         <Navbar.Collapse id="navbarScroll">
           <Nav className='container'>
             <Nav.Link href="#" className='text-white p-5'>Home</Nav.Link>
-            <Nav.Link href="#" className='text-white p-5'>My Methodology</Nav.Link>
-            <Nav.Link href="#" className='text-white p-5'>project</Nav.Link>
-            <Nav.Link href="#" className='text-white p-5'>Skills</Nav.Link>
-            <Nav.Link href="#" className='text-white p-5'>Blog</Nav.Link>
-            <Nav.Link href="#" className='text-white p-5'>Contact</Nav.Link>
+            <Nav.Link href="#Methodology" className='text-white p-5'>My Methodology</Nav.Link>
+            <Nav.Link href="#project" className='text-white p-5'>projects</Nav.Link>
+            <Nav.Link href="#Skills" className='text-white p-5'>Skills</Nav.Link>
+            <Nav.Link href="https://codewithamine.hashnode.dev/" target="_blank" className='text-white p-5'>Blog</Nav.Link>
+            <Nav.Link href="#Contact" className='text-white p-5'>Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
