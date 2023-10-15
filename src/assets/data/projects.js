@@ -1,5 +1,5 @@
 import translateImg from '../projects_photos/Game.png';
-import touristAgencyImg from '../projects_photos/touristAgency.svg';
+import touristAgencyImg from '../projects_photos/touristAgency.jpg';
 import yummy_noddels from '../projects_photos/yummy-noddels.svg';
 
 export const projectsInfo = [

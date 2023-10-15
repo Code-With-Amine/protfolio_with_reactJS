@@ -13,7 +13,7 @@ function Projects() {
             <img
               src={cover}
               alt={title}
-              className="col-lg-5 col-sm-12 h-100 img-fluid project--image"
+              className="col-lg-5 col-sm-12 img-fluid project--image"
             />
             <div className="col-lg-5 col-sm-12 py-4 w-lg-50 w-sm-100 mx-auto">
               <h1 className="project--title">{title}</h1>
