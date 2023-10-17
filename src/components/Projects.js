@@ -43,7 +43,7 @@ function Projects() {
                   target="_blank"
                   className="btn fw-bold col-3 text-white offset-lg-3 project--site "
                 >
-                  View site{" "}
+                  <span className="project--site__underline">View site</span>{" "}
                   <i
                     className="fa-solid fa-arrow-right"
                     style={{ color: "#ffffff" }}
@@ -61,7 +61,7 @@ function Projects() {
         className="btn text-center fw-bold col-3 text-white offset-lg-3 project--site w-100 d-block mx-auto"
         style={{ fontSize: "1.5rem" }}
       >
-        SEE MORE ...
+        <span className="project--site__underline">SEE MORE</span> ...
       </a>
     </div>
   );

@@ -31,7 +31,9 @@ $final-color: #D9D9D9;
         -o-border-radius: 40px;
 }
     &--site{
-
+        &__underline{
+            border-bottom: 3px solid $text-color;
+        }
     }
     &--image{
         object-fit: cover;
