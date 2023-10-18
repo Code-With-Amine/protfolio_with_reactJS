@@ -31,6 +31,6 @@ export const projectsInfo = [
         summery: 'Website to test your grasping for a new language throughout out a fun game in your favorite filed of interset',
         technologies: ['JavaScript', 'HTML', 'CSS'],
         codeSource: 'https://github.com/Code-With-Amine/translation-game',
-        link: ''
+        link: 'https://code-with-amine.github.io/translation-game/'
     }
 ]
